@@ -11,52 +11,49 @@
 </head>
 <body>
     <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
-        <!-- Premier League Logo -->
-        <div class="logo-space mb-4">
-            <img src="images/prem_logo.png" alt="Premier League Logo" id="prem-logo">
-        </div>
-
-        <!-- Scoreboard -->
-        <div class="scoreboard text-center">
-            <!-- Teams and Scores Row -->
-            <div class="d-flex justify-content-center align-items-center">
-                <!-- Team 1 -->
-                <div class="team-box">
-                    <span id="team1-name" class="team-name">CHE</span>
-                </div>
-                <div class="score-box">
-                    <span id="team1-score" class="score">2</span>
-                </div>
-
-                <!-- Score Separator -->
-                <div class="separator">-</div>
-
-                <!-- Team 2 -->
-                <div class="score-box">
-                    <span id="team2-score" class="score">0</span>
-                </div>
-                <div class="team-box">
-                    <span id="team2-name" class="team-name">AVL</span>
-                </div>
+        
+        <!-- Logo and Scoreboard Container -->
+        <div class="scoreboard-container d-flex flex-column align-items-center">
+            <!-- Premier League Logo -->
+            <div class="logo-space">
+                <img src="images/prem_logo.png" alt="Premier League Logo" id="prem-logo">
             </div>
 
-            <!-- Timer and Extra Time Row -->
-            <div class="timer-section mt-3 d-flex justify-content-center align-items-center">
-                <div class="timer" id="timer">91:20</div>
-                <div class="extra-time ms-3" id="extra-time">+3</div>
+            <!-- Scoreboard -->
+            <div class="scoreboard text-center">
+                <!-- Teams and Scores Unified Box -->
+                <div class="d-flex justify-content-center align-items-center score-row">
+                    <!-- Team 1 -->
+                    <input type="text" id="team1-name" class="team-input" value="CHE" maxlength="3">
+                    <input type="number" id="team1-score" class="score-input" value="2" min="0">
+                    
+                    <!-- Separator -->
+                    <div class="separator">-</div>
+
+                    <!-- Team 2 -->
+                    <input type="number" id="team2-score" class="score-input" value="0" min="0">
+                    <input type="text" id="team2-name" class="team-input" value="AVL" maxlength="3">
+                </div>
+
+                <!-- Timer and Extra Time Row -->
+                <div class="timer-section mt-3 d-flex justify-content-center align-items-center">
+                    <div class="timer" id="timer">00:00</div>
+                    <div class="extra-time ms-3 d-none" id="extra-time">+0</div>
+                </div>
             </div>
         </div>
 
         <!-- Control Buttons -->
-        <div class="controls mt-5">
-            <button class="btn btn-dark" onclick="startTimer()">Start</button>
-            <button class="btn btn-dark" onclick="stopTimer()">Stop</button>
-            <button class="btn btn-dark" onclick="resetTimer()">Reset</button>
-            <button class="btn btn-dark" onclick="startSecondHalf()">Second Half</button>
-            <button class="btn btn-dark" onclick="startCustomTimer()">Custom Time</button>
-            <input type="number" id="extra-time-input" placeholder="Extra Time" class="form-control d-inline-block w-auto mx-2">
-            <button class="btn btn-success" onclick="setExtraTime()">Set Extra Time</button>
-        </div>
+        <div class="controls mt-4">
+          <button id="start-btn" class="btn btn-dark">Start</button>
+          <button id="stop-btn" class="btn btn-dark">Stop</button>
+          <button id="reset-btn" class="btn btn-dark">Reset</button>
+          <button id="second-half-btn" class="btn btn-dark">Second Half</button>
+          <button id="custom-time-btn" class="btn btn-dark">Custom Time</button>
+          <input type="number" id="extra-time-input" placeholder="Extra Time" class="form-control d-inline-block w-auto mx-2">
+          <button id="set-extra-time-btn" class="btn btn-success">Set Extra Time</button>
+      </div>
+      
     </div>
 </body>
 </html>
