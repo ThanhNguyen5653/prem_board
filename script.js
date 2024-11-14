@@ -34,10 +34,12 @@ function resetTimer() {
 
 // Set Extra Time
 function setExtraTime() {
-    const extraTime = parseInt(document.getElementById("extra-time-input").value, 10);
-    if (!isNaN(extraTime) && extraTime > 0) {
+    const extraTimeInput = document.getElementById("extra-time-input");
+    const extraTimeValue = parseInt(extraTimeInput.value, 10);
+
+    if (!isNaN(extraTimeValue) && extraTimeValue > 0) {
         document.getElementById("extra-time").style.display = "block"; // Show extra time
-        document.getElementById("extra-time").innerText = `+${extraTime}`;
+        document.getElementById("extra-time").innerText = `+${extraTimeValue}`;
     } else {
         document.getElementById("extra-time").style.display = "none"; // Hide if invalid input
     }
