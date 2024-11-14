@@ -2,6 +2,7 @@ let timerInterval;
 let secondsElapsed = 0;
 let isSecondHalf = false;
 let customStartTime = 0;
+let extraTime = 0; // Track extra time in seconds
 
 // Format time as MM:SS
 function formatTime(seconds) {
@@ -16,6 +17,11 @@ function startTimer() {
     timerInterval = setInterval(() => {
         secondsElapsed++;
         document.getElementById("timer").innerText = formatTime(secondsElapsed);
+
+        // Update the extra time display if applicable
+        if (extraTime > 0) {
+            document.getElementById("extra-time").innerText = `+${Math.floor(extraTime / 60)}:${extraTime % 60 < 10 ? '0' : ''}${extraTime % 60}`;
+        }
     }, (12 * 1000) / 45); // Speed up: 12 min real-time = 45 game min
 }
 
@@ -28,6 +34,7 @@ function stopTimer() {
 function resetTimer() {
     clearInterval(timerInterval);
     secondsElapsed = isSecondHalf ? 45 * 60 : 0; // Reset to 0 or 45 min based on the half
+    extraTime = 0; // Reset extra time
     document.getElementById("timer").innerText = formatTime(secondsElapsed);
     document.getElementById("extra-time").style.display = "none"; // Hide extra time
 }
@@ -38,8 +45,9 @@ function setExtraTime() {
     const extraTimeValue = parseInt(extraTimeInput.value, 10);
 
     if (!isNaN(extraTimeValue) && extraTimeValue > 0) {
+        extraTime = extraTimeValue * 60; // Convert minutes to seconds
         document.getElementById("extra-time").style.display = "block"; // Show extra time
-        document.getElementById("extra-time").innerText = `+${extraTimeValue}`;
+        document.getElementById("extra-time").innerText = `+${extraTimeValue}:00`;
     } else {
         document.getElementById("extra-time").style.display = "none"; // Hide if invalid input
     }
