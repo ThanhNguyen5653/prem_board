@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soccer Scoreboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Soccer Scoreboard</h1>
-    <div class="scoreboard">
-      <div class="teams">
-        <span contenteditable="true" id="teamA">MUN</span>
-        <span class="score" id="scoreA">0</span>
-        <span> - </span>
-        <span class="score" id="scoreB">0</span>
-        <span contenteditable="true" id="teamB">CHE</span>
-      </div>
+    <div class="container">
+        <!-- Placeholder for Premier League Logo -->
+        <div class="logo-space">
+            <img src="images/prem_logo.png" alt="Premier League Logo" id="prem-logo">
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="team">
+                <span id="team1-name">CHE</span>
+                <span class="score" id="team1-score">0</span>
+            </div>
+            <div class="team">
+                <span id="team2-name">AVL</span>
+                <span class="score" id="team2-score">0</span>
+            </div>
+            <div class="timer" id="timer">0:00</div>
+            <div class="extra-time" id="extra-time" style="display: none;">+0</div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="controls">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+            <button onclick="startSecondHalf()">Second Half</button>
+            <button onclick="startCustomTimer()">Custom Time</button>
+            <input type="number" id="extra-time-input" placeholder="Enter added time">
+            <button onclick="setExtraTime()">Add Extra Time</button>
+        </div>
     </div>
-    <div class="timer-container">
-      <div class="timer">
-        <span id="timer">00:00</span><span id="extraTime"></span>
-      </div>
-    </div>
-    <div class="buttons">
-      <button onclick="startTimer()">Start</button>
-      <button onclick="stopTimer()">Stop</button>
-      <button onclick="resetTimer()">Reset</button>
-    </div>
-    <form onsubmit="addExtraTime(event)">
-      <label for="extraTimeInput">Add Time (mins): </label>
-      <input type="number" id="extraTimeInput" min="0" placeholder="Enter added time">
-      <button type="submit">Submit</button>
-    </form>
-    <div class="half-buttons">
-      <button onclick="setSecondHalf()">Start 2nd Half (45-90 mins)</button>
-      <button onclick="setCustomTime()">Set Custom Time</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
 </body>
 </html>
