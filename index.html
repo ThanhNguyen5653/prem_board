@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Scoreboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Soccer Scoreboard</h1>
+    <div class="scoreboard">
+      <div class="teams">
+        <span id="teamA">MUN</span>
+        <span id="scoreA">0</span>
+        <span> - </span>
+        <span id="scoreB">0</span>
+        <span id="teamB">CHE</span>
+      </div>
+      <div class="timer">
+        <span id="timer">45:00</span><span id="extraTime"></span>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <form onsubmit="addExtraTime(event)">
+      <label for="extraTimeInput">Add Time (mins): </label>
+      <input type="number" id="extraTimeInput" min="0" placeholder="Enter added time">
+      <button type="submit">Submit</button>
+    </form>
+    <div class="half-buttons">
+      <button onclick="setSecondHalf()">Start 2nd Half (45-90 mins)</button>
+      <button onclick="setCustomTime()">Set Custom Time</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
