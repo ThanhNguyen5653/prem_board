@@ -60,10 +60,17 @@ function startCustomTimer() {
     }
 }
 
-// Event Listeners for buttons (optional if using inline HTML attributes)
+// Event Listeners for buttons
 document.getElementById("start-btn").addEventListener("click", startTimer);
 document.getElementById("stop-btn").addEventListener("click", stopTimer);
 document.getElementById("reset-btn").addEventListener("click", resetTimer);
 document.getElementById("set-extra-time-btn").addEventListener("click", setExtraTime);
 document.getElementById("second-half-btn").addEventListener("click", startSecondHalf);
 document.getElementById("custom-time-btn").addEventListener("click", startCustomTimer);
+
+// Ensure the scoreboard updates correctly on load
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("team1-score").value = 0;
+    document.getElementById("team2-score").value = 0;
+    document.getElementById("timer").innerText = formatTime(secondsElapsed);
+});
