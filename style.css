@@ -7,11 +7,6 @@
 
 body {
   background-color: #04f5ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
 }
 
 .container {
@@ -22,55 +17,49 @@ body {
   max-height: 100px;
 }
 
+/* Scoreboard Styling */
 .scoreboard {
   background-color: #38003c;
   border-radius: 30px;
   padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   color: white;
-  max-width: 80%;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.team {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-}
-
-.team-name {
-  background-color: #ffffff;
-  color: #000;
-  border-radius: 10px;
-  padding: 10px 20px;
-  min-width: 80px;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.score {
-  background-color: #ffffff;
-  color: #000;
-  border-radius: 10px;
-  padding: 10px 20px;
-  min-width: 60px;
-  text-align: center;
+  max-width: 80%;
   font-size: 2rem;
 }
 
-.vs-divider {
-  color: white;
-  font-weight: bold;
+.team-box, .score-box {
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.separator {
+  color: #ffffff;
+  font-size: 2.5rem;
   margin: 0 20px;
+  font-weight: bold;
+}
+
+.team-name {
+  font-size: 1.8rem;
+}
+
+.score {
+  font-size: 2.5rem;
 }
 
 .timer-section {
+  margin-top: 15px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .timer {
@@ -89,6 +78,7 @@ body {
   font-size: 2rem;
 }
 
+/* Control Buttons Styling */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +96,5 @@ body {
   font-size: 1.1rem;
   border-radius: 10px;
   border: 2px solid #38003c;
-  margin-top: 5px;
   width: 100px;
 }

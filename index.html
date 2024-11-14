@@ -10,38 +10,45 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
         <!-- Premier League Logo -->
-        <div class="logo-space mb-3">
+        <div class="logo-space mb-4">
             <img src="images/prem_logo.png" alt="Premier League Logo" id="prem-logo">
         </div>
 
         <!-- Scoreboard -->
-        <div class="scoreboard d-flex align-items-center justify-content-center">
-            <!-- Team 1 -->
-            <div class="team d-flex align-items-center">
-                <span id="team1-name" class="team-name">CHE</span>
-                <span class="score" id="team1-score">2</span>
+        <div class="scoreboard text-center">
+            <!-- Teams and Scores Row -->
+            <div class="d-flex justify-content-center align-items-center">
+                <!-- Team 1 -->
+                <div class="team-box">
+                    <span id="team1-name" class="team-name">CHE</span>
+                </div>
+                <div class="score-box">
+                    <span id="team1-score" class="score">2</span>
+                </div>
+
+                <!-- Score Separator -->
+                <div class="separator">-</div>
+
+                <!-- Team 2 -->
+                <div class="score-box">
+                    <span id="team2-score" class="score">0</span>
+                </div>
+                <div class="team-box">
+                    <span id="team2-name" class="team-name">AVL</span>
+                </div>
             </div>
 
-            <!-- Score Separator -->
-            <div class="vs-divider">-</div>
-
-            <!-- Team 2 -->
-            <div class="team d-flex align-items-center">
-                <span id="team2-name" class="team-name">AVL</span>
-                <span class="score" id="team2-score">0</span>
-            </div>
-
-            <!-- Timer Section -->
-            <div class="timer-section d-flex align-items-center">
+            <!-- Timer and Extra Time Row -->
+            <div class="timer-section mt-3 d-flex justify-content-center align-items-center">
                 <div class="timer" id="timer">91:20</div>
-                <div class="extra-time" id="extra-time">+3</div>
+                <div class="extra-time ms-3" id="extra-time">+3</div>
             </div>
         </div>
 
         <!-- Control Buttons -->
-        <div class="controls mt-4">
+        <div class="controls mt-5">
             <button class="btn btn-dark" onclick="startTimer()">Start</button>
             <button class="btn btn-dark" onclick="stopTimer()">Stop</button>
             <button class="btn btn-dark" onclick="resetTimer()">Reset</button>
