@@ -85,11 +85,14 @@ body {
 }
 
 .extra-time {
-  background-color: #00ff85;
-  color: #38003c;
+  display: none; /* Start hidden by default */
+  background-color: #00ff85;  /* Bright green background */
+  color: #38003c;  /* Dark red text color */
   padding: 10px 20px;
   border-radius: 15px;
   font-size: 2rem;
+  margin-left: 10px; /* Space between the timer and extra time */
+  white-space: nowrap; /* Prevents text from wrapping */
 }
 
 /* Control Buttons Styling */
