@@ -5,8 +5,19 @@
   font-family: Arial, sans-serif;
 }
 
+
+
 body {
+  transform: scale(1.25); /* Zoom in by 25% */
+  transform-origin: top middle; /* Ensure scaling starts from the top left */
   background-color: #04f5ff;
+
+}
+
+@media (max-width: 768px) {
+  body {
+      transform: scale(1); /* Revert to normal size for smaller screens */
+  }
 }
 
 .container {
